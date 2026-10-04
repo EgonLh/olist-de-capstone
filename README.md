@@ -1,1 +1,1 @@
-# olit-de-capstone
+# olist-de-capstone
