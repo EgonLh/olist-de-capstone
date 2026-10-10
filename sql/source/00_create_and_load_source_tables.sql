@@ -1,4 +1,4 @@
--- ============================================================
+-- =============================================================
 -- Olist Capstone — Source Table Setup
 -- Run ONCE before any Week 2+ SQL hands-on.
 -- Prereq: the 9 Olist CSVs are unzipped into ./data/ (gitignored).
