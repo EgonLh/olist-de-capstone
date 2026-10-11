@@ -34,3 +34,38 @@ where customer_city like '%sao';
 
 select * from customers 
 where customer_city like 'sao%';
+
+--Order By--
+select order_id,product_id,price,freight_value from raw.order_items 
+order by price desc  limit 10
+
+--sort by two keys; alias is allowed here
+select * from order_items 
+order by price,order_id limit 10
+
+-- order by two columns
+select price+freight_value as total_paid,order_id 
+from order_items
+order by total_paid,order_id  desc limit 10
+
+-- Aggregate Func-- 
+select count(*) from customers ; --99441
+select count(*) from order_items; --112,650
+
+--Order Status Count by Orders--
+--Combination with GroupBy
+select count(*),order_status from orders 
+group by order_status
+
+--Where and Group by
+select count(*),customer_state from customers  
+where customer_state <> 'SP'
+group by customer_state
+
+--Where + Group By + Having--
+select seller_id ,Count(*) as items_sold
+from order_items 
+group by seller_id
+having count(*) > 100
+
+
